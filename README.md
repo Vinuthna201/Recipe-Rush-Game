@@ -46,7 +46,7 @@ Clone the repository:
 
 bash
 Copy
-git clone https://github.com/your-username/recipe-rush.git
+git clone https://github.com/Vinuthna201/recipe-rush.git
 Navigate to the project directory:
 
 bash
