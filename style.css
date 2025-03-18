@@ -1,0 +1,383 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#loginPage {
+  text-align: center;
+  margin-top: 50px;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#loginPage input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 200px;
+}
+
+#loginPage button {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#loginPage a {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#loginPage a:hover {
+  color: #0056b3;
+}
+
+h1 {
+  color: #333;
+}
+
+.timer-container {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff6347;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+.ingredients {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.ingredient {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  cursor: grab;
+  background-color: #fff;
+  user-select: none;
+}
+
+.bowl {
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  border: 3px dashed #333;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0;
+}
+
+.bowl p {
+  margin: 0;
+}
+
+.bowl img {
+  margin-top: 10px;
+  border: 2px solid #333;
+  border-radius: 10px;
+}
+
+.message {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: green;
+}
+
+.score {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.close {
+  float: right;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #555;
+}
+
+/* Background Animation */
+@keyframes bgAnimation {
+  0% { background-color: #ffcccb; }
+  50% { background-color: #ffeb99; }
+  100% { background-color: #ffcccb; }
+}
+
+body {
+  animation: bgAnimation 5s infinite alternate;
+}
+
+/* Bouncing Login Form */
+#loginPage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Waving Hand Emoji */
+#loginPage h2::after {
+  content: " 👋";
+  animation: wave 1s infinite alternate;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(10deg); }
+}
+
+/* Floating Input Fields & Buttons */
+#loginPage input, #loginPage button {
+  animation: float 2s infinite alternate;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-5px); }
+}
+
+/* Fun Hover Effect */
+#loginPage button:hover {
+  background-color: #ff5722;
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
+/* Game Title Styling */
+#gameTitle {
+  font-size: 36px;
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun font */
+  color: #ff5722; /* Bright & playful */
+  text-align: center;
+  margin-bottom: 10px;
+  animation: titleBounce 1.5s infinite alternate;
+}
+
+/* Title Bounce Animation */
+@keyframes titleBounce {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-5px); }
+}
+
+/* Interactive Title Box */
+#titleBox {
+  position: absolute;
+  top: 20px; /* Adjust this value to control how close it is to the top */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 10; /* Ensure it stays above other elements */
+}
+
+/* Title Text */
+#gameTitle {
+  font-size: 32px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: white; /* Changed to white */
+  margin: 0;
+  animation: titleFloat 2s infinite alternate;
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Floating Title Effect */
+@keyframes titleFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-5px); }
+}
+
+/* Hover Interaction */
+#titleBox:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Background Image with Animation */
+/* body {
+  background: url('shubham-dhage-t0Bv0OBQuTg-unsplash.jpg') no-repeat center center fixed;
+  background-size: cover;
+  animation: zoomEffect 10s infinite alternate;
+}
+
+/* Zoom Animation */
+/* @keyframes zoomEffect {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+} */
+
+/* Semi-transparent Overlay to Keep Text Readable */
+/* #loginPage {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+} */
+
+/* Move the "Recipie Rush" box to the top center of the page */
+#titleBox {
+  position: absolute;
+  top: 20px; /* Adjust this value to control the distance from the top */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; /* Ensure it stays above other elements */
+  animation: titleFloat 2s infinite alternate; /* Add floating animation */
+}
+
+/* Center the login container on the page */
+#loginPage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Ensure it stays below the title box */
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Floating animation for the title box */
+@keyframes titleFloat {
+  0% { transform: translate(-50%, 0px); }
+  100% { transform: translate(-50%, -10px); }
+}
+
+/* Hide the "Recipie Rush" box and its text */
+#titleBox {
+  display: none; /* Hide the title box */
+}
+
+/* Remove the #titleBox and replace it with a simple text */
+#titleBox {
+  display: none; /* Hide the existing title box */
+}
+
+/* Add a new text for "Recipie Rush" at the top center of the page */
+#gameTitle {
+  position: absolute;
+  top: 100px; /* Adjust this value to control the distance from the top */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 50px;
+  font-family: 'Cinzel';
+  color: black;
+  text-align: center;
+  margin: 0;
+  z-index: 10; /* Add a shadow for better visibility */
+  animation: titleFloat 2s infinite alternate; /* Floating animation */
+}
+
+/* Floating animation for the title */
+@keyframes titleFloat {
+  0% { transform: translate(-50%, 0px); }
+  100% { transform: translate(-50%, -10px); }
+}
+
+/* Center the login container on the page */
+#loginPage {
+  position: absolute;
+  top: 45%; /* Move the login container slightly up */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1;
+}

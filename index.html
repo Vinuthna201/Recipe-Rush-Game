@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cooking Game</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Add Google Fonts for the new font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+</head>
+<body>
+  <!-- "Recipie Rush" text at the top center of the page -->
+  <h1 id="gameTitle">Recipie Rush</h1>
+
+  <!-- Login/Sign-Up Page -->
+  <div id="loginPage">
+    <h2>Login or Sign Up</h2>
+    <div id="loginForm">
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a href="#" onclick="showSignUp()">Sign Up</a></p>
+    </div>
+    <div id="signUpForm" style="display: none;">
+      <input type="email" id="signupEmail" placeholder="Email">
+      <input type="password" id="signupPassword" placeholder="Password">
+      <input type="password" id="confirmPassword" placeholder="Confirm Password">
+      <button onclick="signUp()">Sign Up</button>
+      <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+    </div>
+    <p id="loginMessage"></p>
+  </div>
+
+  <!-- Game Page (hidden by default) -->
+  <div id="gamePage" style="display: none;">
+    <h1>We Are Cooking!</h1>
+    <div class="timer-container">
+      <span id="timer">60</span> seconds left!
+    </div>
+
+    <!-- Ingredients -->
+    <div class="ingredients">
+      <div class="ingredient" draggable="true" data-name="tomato">🍅 Tomato</div>
+      <div class="ingredient" draggable="true" data-name="lettuce">🥬 Lettuce</div>
+      <div class="ingredient" draggable="true" data-name="cheese">🧀 Cheese</div>
+      <div class="ingredient" draggable="true" data-name="bread">🍞 Bread</div>
+      <div class="ingredient" draggable="true" data-name="pasta">🍝 Pasta</div>
+      <div class="ingredient" draggable="true" data-name="sauce">🍅 Sauce</div>
+      <div class="ingredient" draggable="true" data-name="pizza-base">🍕 Pizza Base</div>
+    </div>
+
+    <!-- Bowl -->
+    <div class="bowl" id="bowl">
+      <p>Drop ingredients here!</p>
+      <img id="dishImage" src="" alt="Dish Image" style="display: none; width: 100px; height: 100px;">
+    </div>
+
+    <!-- Message -->
+    <div class="message" id="message"></div>
+
+    <!-- Score Display -->
+    <div class="score">Score: <span id="score">0</span></div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <button onclick="resetBowl()">Reset Bowl</button>
+      <button onclick="showInstructions()">Instructions</button>
+    </div>
+
+    <!-- Instructions Modal -->
+    <div id="instructionsModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeInstructions()">&times;</span>
+        <h2>Recipes</h2>
+        <ul>
+          <li><strong>Salad</strong>: 🍅 Tomato + 🥬 Lettuce + 🧀 Cheese</li>
+          <li><strong>Grilled Cheese Sandwich</strong>: 🍞 Bread + 🧀 Cheese</li>
+          <li><strong>Burger</strong>: 🍞 Bread + 🍅 Tomato + 🥬 Lettuce + 🧀 Cheese</li>
+          <li><strong>Pasta</strong>: 🍝 Pasta + 🍅 Sauce</li>
+          <li><strong>Pizza</strong>: 🍕 Pizza Base + 🍅 Tomato + 🧀 Cheese</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sound Effects -->
+    <audio id="successSound" src="success.mp3"></audio>
+    <audio id="dropSound" src="drop.mp3"></audio>
+    <audio id="timerBeep" src="timer-beep.mp3"></audio>
+  </div>
+
+  <!-- Success Pop-Up Modal -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeSuccessModal()">&times;</span>
+      <p>You have successfully signed up!</p>
+      <button onclick="closeSuccessModal()">Go to Login</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  
+  <script>
+    // Function to hide the "Recipie Rush" title when the game page is displayed
+    function hideTitleOnGamePage() {
+      const gameTitle = document.getElementById("gameTitle");
+      const gamePage = document.getElementById("gamePage");
+  
+      if (gamePage.style.display === "block") {
+        gameTitle.style.display = "none";
+      } else {
+        gameTitle.style.display = "block";
+      }
+    }
+  
+    // Observe changes to the game page visibility
+    const observer = new MutationObserver(hideTitleOnGamePage);
+    observer.observe(document.getElementById("gamePage"), {
+      attributes: true,
+      attributeFilter: ["style"],
+    });
+  
+    // Initial check
+    hideTitleOnGamePage();
+  </script>
+
+</body>
+</html>
