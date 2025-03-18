@@ -14,7 +14,6 @@ Follow Instructions: Pay attention to the recipe instructions to ensure you add 
 
 Earn Points: Get points for each correct ingredient added. Finish before the timer runs out to earn bonus points!
 
-Level Up: Unlock new recipes and challenges as you progress.
 
 ## **Features**
 
