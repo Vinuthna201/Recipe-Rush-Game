@@ -1,9 +1,8 @@
-#Recipe Rush Game 
+Recipe Rush Game 
 
 Recipe Rush is a fun and interactive drag-and-drop cooking game where players assemble dishes by dragging the correct ingredients onto the plate. Follow the recipe instructions, earn points for correct combinations, and race against the timer to create as many dishes as possible! With a simple login/signup system, you can save your progress and compete for high scores.
 
-#How to Play
-
+How to Play
 
 Login/Signup: Start by creating an account or logging in to save your progress.
 
@@ -17,7 +16,7 @@ Earn Points: Get points for each correct ingredient added. Finish before the tim
 
 Level Up: Unlock new recipes and challenges as you progress.
 
-#Features
+Features
 
 Drag-and-Drop Gameplay: Simple and intuitive controls for all ages.
 
@@ -31,8 +30,7 @@ Login/Signup: Save your progress and track your high scores.
 
 Responsive Design: Play on desktop, tablet, or mobile devices.
 
-#Tech Stack
-
+Tech Stack
 
 Frontend: HTML5, CSS, JavaScript
 
@@ -42,8 +40,7 @@ Login/Signup: Simple form validation and user authentication.
 
 Timer and Scoring: JavaScript-based logic for tracking time and points.
 
-#How to Run Locally
-
+How to Run Locally
 
 Clone the repository:
 
@@ -57,8 +54,7 @@ Copy
 cd recipe-rush
 Open the index.html file in your browser to start the game.
 
-#How to Contribute
-
+How to Contribute
 
 We welcome contributions to improve Recipe Rush! Here's how you can help:
 
@@ -69,18 +65,5 @@ Create a new branch for your feature or bug fix.
 Commit your changes and push to your branch.
 
 Submit a pull request with a detailed description of your changes.
-
-#License
-
-
-This project is licensed under the MIT License.
-
-#Credits
-
-
-Developed by Vinuthna
-
-Inspired by cooking and puzzle games.
-
 
 Enjoy playing Recipe Rush! If you have any questions or feedback, feel free to open an issue or reach out. Happy cooking! 
